@@ -1,0 +1,6 @@
+{
+  "name": "Aaditya - 3D Creator",
+  "description": "Portfolio for Aaditya, a 3D Creator and AIML enthusiast",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Syne", sans-serif;
+}
+
+@layer base {
+  html, body, #root {
+    @apply bg-[#030303] text-[#F3F4F6] m-0 p-0 box-border;
+    cursor: none; /* Hide default cursor for CustomCursor */
+    /* Architectural Grid Background */
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .hero-heading {
+    font-family: "Syne", sans-serif;
+  }
+  
+  a, button, [role="button"], input, select, textarea {
+    cursor: none !important;
+  }
+  
+  /* Lenis smooth scrolling sets these by default, but good to have if we don't use Lenis */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .hero-heading {
+    background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .contact-btn-shadow {
+    box-shadow: 0px 4px 4px rgba(255,255,255,0.05), 4px 4px 12px rgba(255,255,255,0.1) inset;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+    color: transparent;
+  }
+  
+  .glass-panel {
+    @apply bg-white/[0.02] border border-white/[0.08] backdrop-blur-md shadow-2xl;
+  }
+}

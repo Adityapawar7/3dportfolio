@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <img id="img" src="./public/edited-photo.png" style="max-width: 500px;" />
+  <script>
+    document.getElementById('img').addEventListener('click', function(e) {
+      const rect = e.target.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      console.log('X:', x * 100 + '%', 'Y:', y * 100 + '%');
+    });
+  </script>
+</body>
+</html>
